@@ -1,0 +1,19 @@
+.container {
+  margin-top: 20px;
+}
+.selectWrapper {
+  display: flex;
+  max-width: 1200px;
+  margin: auto;
+}
+.filters {
+  flex: 1;
+}
+.checkboxwrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.checkboxwrapper {
+  padding: 10px;
+}
