@@ -1,33 +1,26 @@
 {
-  "name": "amrit-hotel-app",
-  "version": "0.1.0",
-  "private": true,
-  "homepage": "https://github.com/Harshpawar333/HotelAmrit",
-  "dependencies": {
-    "node-sass": "^4.12.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-icons": "^3.7.0",
-    "react-router-dom": "^5.0.1",
-    "react-scripts": "3.0.1"
-  },
+  "name": "hotel-amrit-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "proxy": "http://localhost:5000",
   "scripts": {
-    "start": "npm-run-all -p start:js",
-    "build": "npm run react-scripts build"
+    "start": "node server/server.js",
+    "server:dev": "nodemon server/server.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix server/client && npm run build --prefix server/client"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.2",
+    "mongoose": "^6.1.3",
+    "react-two-thumb-input-range": "^1.0.7"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "devDependencies": {
+    "nodemon": "^2.0.15"
   }
 }
