@@ -1,7 +1,6 @@
-import React, { Component, useState, useEffect } from "react";
-import Title from "./Title";
+import React from "react";
 
-function FeaturedRooms({ roomData }) {
+function FeaturedRooms({ isFromHome, roomData }) {
   function listRooms() {
     return roomData.map(function (room) {
       return (
@@ -22,12 +21,25 @@ function FeaturedRooms({ roomData }) {
     });
   }
   return (
-    <div className="featured-rooms">
-      <div className="section-title">
-        <h4>featured rooms</h4>
-      </div>
-      <div className="featured-rooms-center">{listRooms()}</div>
-    </div>
+    <>
+      {roomData.length > 0 ? (
+        <div className={`${isFromHome && "featured-rooms"}`}>
+          {isFromHome && (
+            <div className="section-title">
+              <h4>featured rooms</h4>
+              <div></div>
+            </div>
+          )}
+          <div className="roomslist">
+            <div className="roomslist-center">{listRooms()}</div>
+          </div>
+        </div>
+      ) : (
+        <div class="empty-search">
+          <h3>unfortunately no rooms matched your search parameters</h3>
+        </div>
+      )}
+    </>
   );
 }
 
