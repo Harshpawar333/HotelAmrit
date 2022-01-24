@@ -36,7 +36,7 @@ function FeaturedRooms({ isFromHome, roomData }) {
           </div>
         </div>
       ) : (
-        <div class="empty-search">
+        <div className="empty-search">
           <h3>unfortunately no rooms matched your search parameters</h3>
         </div>
       )}

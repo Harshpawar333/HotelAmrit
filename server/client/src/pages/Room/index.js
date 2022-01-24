@@ -65,7 +65,7 @@ const RoomPage = () => {
   // 2000ms 2s
   setTimeout(function () {
     setLoading(false);
-  }, 500);
+  }, 100);
   if (loading) {
     return <Loading />;
   }
