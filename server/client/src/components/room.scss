@@ -1,0 +1,38 @@
+.selectWrapper {
+  display: flex;
+  max-width: 1200px;
+  margin: auto;
+}
+.roomType {
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+}
+.filters {
+  flex: 1;
+  padding: 10px;
+  .filterLabel {
+    margin-bottom: 6px;
+    display: block;
+  }
+}
+
+.checkboxwrapper {
+  padding: 10px;
+}
+.slider {
+  margin-top: 40px;
+  width: 242px;
+  .css-112d2bc-InputLabel {
+    height: 2px;
+  }
+}
+
+.checkboxfilters {
+  .breakfastWrap {
+    margin-bottom: 6px;
+  }
+  label {
+    margin-left: 5px;
+  }
+}

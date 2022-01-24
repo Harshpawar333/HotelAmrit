@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import Select from "react-select";
-import "./room.css";
 import { TwoThumbInputRange } from "react-two-thumb-input-range";
+import { ROOM_TYPE, GUEST_OPTIONS } from "../constants";
+import "./room.scss";
 
 function RoomFilter({
   selectedRoomType,
@@ -15,39 +16,33 @@ function RoomFilter({
   value,
   setValue
 }) {
-  const roomType = [
-    { value: "All", label: "All" },
-    { value: "single", label: "Single Deluxe" },
-    { value: "double", label: "Double Deluxe" },
-    { value: "presedential", label: "Presedential" }
-  ];
-  const guestNumbers = [
-    { value: "1", label: "1" },
-    { value: "2", label: "2" },
-    { value: "3", label: "3" },
-    { value: "4", label: "4" }
-  ];
   const onValueChange = values => {
     setValue(values);
   };
 
   return (
-    <div className="container">
+    <div className="filter-container">
+      <div class="section-title">
+        <h4>Search rooms</h4>
+        <div></div>
+      </div>
       <div className="selectWrapper">
-        <div className="filters p-4" style={{ width: "500px", padding: "10px" }}>
+        <div className="filters">
+          <label className="filterLabel">Room Type</label>
           <Select
             placeholder="select Room Type"
-            options={roomType}
+            options={ROOM_TYPE}
             value={selectedRoomType}
             onChange={selected => {
               setSelectedRoomType(selected);
             }}
           />
         </div>
-        <div className="filters p-4" style={{ width: "500px", padding: "10px" }}>
+        <div className="filters">
+          <label className="filterLabel">Guests</label>
           <Select
             placeholder="select Number of guests"
-            options={guestNumbers}
+            options={GUEST_OPTIONS}
             value={selectedNumGuest}
             onChange={selected => {
               setSelectedNumGuest(selected);
@@ -55,20 +50,22 @@ function RoomFilter({
           />
         </div>
         <div className="filters">
-          <div className="col-sm">Price</div>
-          <div className="col-sm">
+          <label className="filterLabel">
+            Room Price ({value[0]}₹ - {value[1]}₹)
+          </label>
+          <div className="slider">
             <TwoThumbInputRange onChange={onValueChange} values={value} min={100} max={3000} />
           </div>
         </div>
-        <div className="checkboxwrapper">
-          <div>
+        <div className="filters checkboxfilters">
+          <div className="breakfastWrap">
             <input
               type="checkbox"
-              placeholder="breackfast"
+              placeholder="breakfast"
               checked={isBreakFastChecked}
               onClick={() => setIsBreakFastChecked(!isBreakFastChecked)}
             />
-            Breakfast
+            <label>Breakfast</label>
           </div>
           <div>
             <input
@@ -77,7 +74,7 @@ function RoomFilter({
               checked={isWifiChecked}
               onClick={() => setIsWifiChecked(!isWifiChecked)}
             />
-            WiFi
+            <label>WiFi</label>
           </div>
         </div>
       </div>

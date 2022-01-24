@@ -4,19 +4,18 @@ import RoomsBanner from "./RoomsBanner";
 import FeaturedRooms from "../../components/FeaturedRooms";
 import RoomFilter from "../../components/RoomFilter";
 import hotelServer from "../../services";
+import { DEFAULT_PRICE } from "../../constants";
 
 const RoomPage = ({}) => {
   const [loading, setLoading] = useState(true);
   const [defaultRoomData, setDefaultRoomData] = useState([]);
   const [roomData, setRoomData] = useState([]);
-  const [selectedRoomType, setSelectedRoomType] = useState("All");
+  const [selectedRoomType, setSelectedRoomType] = useState({ value: "All", label: "All" });
   const [selectedNumGuest, setSelectedNumGuest] = useState({ value: "1", label: "1" });
   const [isBreakFastChecked, setIsBreakFastChecked] = useState(false);
   const [isWifiChecked, setIsWifiChecked] = useState(false);
-  const [value, setValue] = useState([100, 2000]);
+  const [value, setValue] = useState(DEFAULT_PRICE);
 
-  // breakfastIncluded ,
-  // wifiIncluded
   async function loadFeaturedRooms() {
     try {
       const result = await hotelServer.get(`/rooms`);
@@ -46,8 +45,6 @@ const RoomPage = ({}) => {
         data.type === selectedRoomType.value ||
         (selectedRoomType.value === "All" &&
           data.numOfGuest >= Number(selectedNumGuest.value) &&
-          // data.breakfastIncluded === isBreakFastChecked &&
-          // data.wifiIncluded === isWifiChecked &&
           value[0] < data.price &&
           data.price < value[1])
       );
