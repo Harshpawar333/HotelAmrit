@@ -1,5 +1,6 @@
 import React from "react";
 import Select from "react-select";
+import { Link } from "react-router-dom";
 import { TwoThumbInputRange } from "react-two-thumb-input-range";
 import { ROOM_TYPE, GUEST_OPTIONS } from "../constants";
 import "./room.scss";
@@ -22,7 +23,7 @@ function RoomFilter({
 
   return (
     <div className="filter-container">
-      <div class="section-title">
+      <div className="section-title">
         <h4>Search rooms</h4>
         <div></div>
       </div>

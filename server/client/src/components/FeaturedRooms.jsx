@@ -11,7 +11,7 @@ function FeaturedRooms({ isFromHome, roomData }) {
               <h6>${room.price}</h6>
               <p>per night</p>
             </div>
-            <a className="btn-primary room-link" href="#/rooms/double-deluxe">
+            <a className="btn-primary room-link" href="#/roomInfo">
               features
             </a>
           </div>

@@ -1,0 +1,29 @@
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+.imageWrapper {
+  margin-top: 70px;
+  max-width: 1200px;
+  max-height: 200px;
+  display: flex;
+}
+.image {
+  margin-right: 40px;
+  max-width: 350px;
+}
+
+.detailsWrapper {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 0;
+}
+.details {
+  flex: 1;
+}
+.info {
+  flex: 1;
+}
+.extras {
+  display: flex;
+}

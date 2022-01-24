@@ -12,7 +12,8 @@
     "react-icons": "^3.7.0",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
-    "react-select": "^5.2.2"
+    "react-select": "^5.2.2",
+    "react-two-thumb-input-range": "^1.0.7"
   },
   "proxy": "http://localhost:5000",
   "scripts": {
