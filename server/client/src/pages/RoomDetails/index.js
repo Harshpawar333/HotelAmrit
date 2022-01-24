@@ -2,19 +2,19 @@ import React, { useState, useEffect } from "react";
 import RoomsBanner from "../Room/RoomsBanner";
 import hotelServer from "../../services";
 import "./roomDetails.css";
-function RoomInfo() {
-  const [roomInfoData, setRoomInfoData] = useState([]);
-  async function loadFeaturedRooms() {
-    const result = await hotelServer.get(`/rooms`);
-    setRoomInfoData(result.data);
-    console.log(data);
+
+function RoomInfo(props) {
+  const [roomDetails, setRoomDetails] = useState([]);
+
+  async function loadRoomDetails() {
+    const result = await hotelServer.post("/rooms/details", { id: props.match.params.id });
+    setRoomDetails(result.data);
   }
+
   useEffect(function () {
-    loadFeaturedRooms();
+    loadRoomDetails();
   }, []);
-  //   function listRoomInfo() {
-  //     roomData;
-  //   }
+
   return (
     <>
       <RoomsBanner />
