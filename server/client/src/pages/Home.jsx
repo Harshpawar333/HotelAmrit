@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Cover from "../components/Cover";
 import Banner from "../components/Banner";
-import { Link } from "react-router-dom";
 import Services from "../components/Services";
 import FeaturedRooms from "../components/FeaturedRooms";
 import hotelServer from "../services";
 import ChildComponent from "./ChildComponent";
 import Button from "./Button";
+
 const Home = () => {
   const [defaultRoomData, setDefaultRoomData] = useState([]);
   async function loadFeaturedRooms() {
