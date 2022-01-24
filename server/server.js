@@ -1,11 +1,13 @@
-require("dotenv").config();
-const express = require("express");
-const cookieParser = require("cookie-parser");
-const hotelRoutes = require("./routes/hotelRoutes");
+// require("dotenv").config();
+import express from "express";
+import cookieParser from "cookie-parser";
+import hotelRoutes from "./routes/hotelRoutes";
+import path from "path";
+import cors from "cors";
+
+const __dirname = path.resolve();
 
 // const connectDB = require("./config/db");
-const path = require("path");
-const cors = require("cors");
 // connectDB();
 const PORT = process.env.PORT || 5000;
 
