@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import RoomsBanner from "../Room/RoomsBanner";
 import hotelServer from "../../services";
 import "./roomDetails.css";
-import { components } from "react-select";
 
 function RoomInfo(props) {
   const [roomDetails, setRoomDetails] = useState("");
