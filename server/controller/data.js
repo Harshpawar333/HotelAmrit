@@ -12,7 +12,7 @@ export const roomData = [
     wifiIncluded: false,
     moreDetails:
       "Street art edison bulb gluten-free, tofu try-hard lumbersexual brooklyn tattooed pickled chambray. Actually humblebrag next level, deep v art party wolf tofu direct trade readymade sustainable hell of banjo. Organic authe",
-    Extras: [
+    extras: [
       "Plush pillows and breathable bed linens",
       "Soft, oversized bath towels",
       "Full-sized, pH-balanced toiletrie",
@@ -39,7 +39,7 @@ export const roomData = [
     wifiIncluded: true,
     moreDetails:
       "Street art edison bulb gluten-free, tofu try-hard lumbersexual brooklyn tattooed pickled chambray. Actually humblebrag next level, deep v art party wolf tofu direct trade readymade sustainable hell of banjo. Organic authe",
-    Extras: [
+    extras: [
       "Plush pillows and breathable bed linens",
       "Soft, oversized bath towels",
       "Full-sized, pH-balanced toiletrie",
@@ -67,7 +67,7 @@ export const roomData = [
     wifiIncluded: true,
     moreDetails:
       "Street art edison bulb gluten-free, tofu try-hard lumbersexual brooklyn tattooed pickled chambray. Actually humblebrag next level, deep v art party wolf tofu direct trade readymade sustainable hell of banjo. Organic authe",
-    Extras: [
+    extras: [
       "Plush pillows and breathable bed linens",
       "Soft, oversized bath towels",
       "Full-sized, pH-balanced toiletrie",
@@ -95,7 +95,7 @@ export const roomData = [
     wifiIncluded: true,
     moreDetails:
       "Street art edison bulb gluten-free, tofu try-hard lumbersexual brooklyn tattooed pickled chambray. Actually humblebrag next level, deep v art party wolf tofu direct trade readymade sustainable hell of banjo. Organic authe",
-    Extras: [
+    extras: [
       "Plush pillows and breathable bed linens",
       "Soft, oversized bath towels",
       "Full-sized, pH-balanced toiletrie",
@@ -122,7 +122,7 @@ export const roomData = [
     wifiIncluded: true,
     moreDetails:
       "Street art edison bulb gluten-free, tofu try-hard lumbersexual brooklyn tattooed pickled chambray. Actually humblebrag next level, deep v art party wolf tofu direct trade readymade sustainable hell of banjo. Organic authe",
-    Extras: [
+    extras: [
       "Plush pillows and breathable bed linens",
       "Soft, oversized bath towels",
       "Full-sized, pH-balanced toiletrie",
@@ -149,7 +149,7 @@ export const roomData = [
     wifiIncluded: true,
     moreDetails:
       "Street art edison bulb gluten-free, tofu try-hard lumbersexual brooklyn tattooed pickled chambray. Actually humblebrag next level, deep v art party wolf tofu direct trade readymade sustainable hell of banjo. Organic authe",
-    Extras: [
+    extras: [
       "Plush pillows and breathable bed linens",
       "Soft, oversized bath towels",
       "Full-sized, pH-balanced toiletrie",

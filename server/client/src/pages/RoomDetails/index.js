@@ -4,7 +4,7 @@ import hotelServer from "../../services";
 import "./roomDetails.css";
 
 function RoomInfo(props) {
-  const [roomDetails, setRoomDetails] = useState([]);
+  const [roomDetails, setRoomDetails] = useState("");
 
   async function loadRoomDetails() {
     const result = await hotelServer.post("/rooms/details", { id: props.match.params.id });
@@ -15,62 +15,56 @@ function RoomInfo(props) {
     loadRoomDetails();
   }, []);
 
+  function loadParticularRoomDetails() {
+    // function showRoomsExtraDetails() {
+    //   return roomDetails.Extras.map(function (data) {
+    //     return <li>-{data}</li>;
+    //   });
+    // }
+    // function loadExtraImages() {
+    //   return roomDetails.images.map(function (imageUrl) {
+    //     return <img className="image" src={imageUrl} alt="double basic"></img>;
+    //   });
+    // }
+    return (
+      <>
+        <div className="imageWrapper">
+          {roomDetails.images.map(function (imageUrl) {
+            return <img className="image" src={imageUrl} alt="double basic"></img>;
+          })}
+        </div>
+        <div className="detailsWrapper">
+          <div className="details">
+            <h3>Details</h3>
+            <p>{roomDetails.moreDetails}</p>
+          </div>
+          <div className="info">
+            <h3>Info</h3>
+            <h6>Price : ₹{roomDetails.price}</h6>
+            <h6>Max Capacity : {roomDetails.numOfGuest} People</h6>
+            {roomDetails.wifiIncluded && <h6>Wifi Included </h6>}
+            {roomDetails.breakfastIncluded && <h6>Breakfast Included </h6>}
+          </div>
+        </div>
+        <div>
+          <h6>Extras</h6>
+          <div className="extras">
+            {roomDetails.extras.map(function (data) {
+              return <li>-{data}</li>;
+            })}
+          </div>
+        </div>
+      </>
+    );
+  }
+
   return (
     <>
       <RoomsBanner />
+
       <div className="container">
         <div className="infoContainer">
-          <div className="imageWrapper">
-            <img
-              className="image"
-              src="https://shubhamd99.github.io/react-hotel-booking-app/static/media/details-2.50c23e62.jpeg"
-              alt="double basic"
-            ></img>
-            <img
-              className="image"
-              src="https://shubhamd99.github.io/react-hotel-booking-app/static/media/details-3.7345b9f6.jpeg"
-              alt="double basic"
-            ></img>
-            <img
-              className="image"
-              src="https://shubhamd99.github.io/react-hotel-booking-app/static/media/details-4.7569a316.jpeg"
-              alt="double basic"
-            ></img>
-          </div>
-          <div className="detailsWrapper">
-            <div className="details">
-              <h3>Details</h3>
-              <p>
-                Street art edison bulb gluten-free, tofu try-hard lumbersexual brooklyn tattooed
-                pickled chambray. Actually humblebrag next level, deep v art party wolf tofu direct
-                trade readymade sustainable hell of banjo. Organic authentic subway tile cliche palo
-                santo, street art XOXO dreamcatcher retro sriracha portland air plant kitsch
-                stumptown. Austin small batch squid gastropub. Pabst pug tumblr gochujang offal
-                retro cloud bread bushwick semiotics before they sold out sartorial literally
-                mlkshk. Vaporware hashtag vice, sartorial before they sold out pok pok health goth
-                trust fund cray.
-              </p>
-            </div>
-            <div className="info">
-              <h3>Info</h3>
-              <h6>Price : ₹ 600</h6>
-              <h6>Max Capacity : 2 People</h6>
-              <h6>Wifi Included </h6>
-              <h6>Breakfast Included </h6>
-            </div>
-          </div>
-          <div>
-            <h6>Extras</h6>
-            <div className="extras">
-              <p>- Plush pillows and breathable bed linens</p>
-              <p>- Soft, oversized bath towels</p>
-              <p>- Full-sized, pH-balanced toiletrie</p>
-              <p>- Complimentary refreshment</p>
-              <p>- Adequate safety/security</p>
-              <p>- Internet</p>
-              <p>- Comfortable beds</p>
-            </div>
-          </div>
+          <div>{roomDetails && loadParticularRoomDetails()}</div>
         </div>
       </div>
     </>

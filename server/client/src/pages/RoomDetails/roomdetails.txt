@@ -1,0 +1,10 @@
+use map for images 
+use map for extras 
+hide wifi heading if wifi is not inclued
+hide breakfast heading if breakfast is not inclued
+
+// add bottom spacing for last section
+
+// do not use map for objects 
+// 
+
