@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function FeaturedRooms({ isFromHome, roomData }) {
   function listRooms() {
@@ -11,9 +12,9 @@ function FeaturedRooms({ isFromHome, roomData }) {
               <h6>${room.price}</h6>
               <p>per night</p>
             </div>
-            <a className="btn-primary room-link" href="#/roomInfo">
+            <Link className="btn-primary room-link" to={`/rooms/${room.id}`}>
               features
-            </a>
+            </Link>
           </div>
           <p className="room-info">{room.name}</p>
         </div>
@@ -35,7 +36,7 @@ function FeaturedRooms({ isFromHome, roomData }) {
           </div>
         </div>
       ) : (
-        <div class="empty-search">
+        <div className="empty-search">
           <h3>unfortunately no rooms matched your search parameters</h3>
         </div>
       )}

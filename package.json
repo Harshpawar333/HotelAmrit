@@ -4,9 +4,10 @@
   "description": "",
   "main": "server.js",
   "proxy": "http://localhost:5000",
+  "type" : "module",
   "scripts": {
-    "start": "node server/server.js",
-    "server:dev": "nodemon server/server.js",
+    "start": "node  --experimental-modules --es-module-specifier-resolution=node server/server.js",
+    "server:dev": "nodemon  --experimental-modules --es-module-specifier-resolution=node  server/server.js",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix server/client && npm run build --prefix server/client"
   },
   "keywords": [],

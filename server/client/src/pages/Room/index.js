@@ -5,9 +5,8 @@ import FeaturedRooms from "../../components/FeaturedRooms";
 import RoomFilter from "../../components/RoomFilter";
 import hotelServer from "../../services";
 import { DEFAULT_PRICE } from "../../constants";
-import RoomInfo from "../RoomDetails/index";
 
-const RoomPage = ({}) => {
+const RoomPage = () => {
   const [loading, setLoading] = useState(true);
   const [defaultRoomData, setDefaultRoomData] = useState([]);
   const [roomData, setRoomData] = useState([]);
@@ -66,7 +65,7 @@ const RoomPage = ({}) => {
   // 2000ms 2s
   setTimeout(function () {
     setLoading(false);
-  }, 500);
+  }, 100);
   if (loading) {
     return <Loading />;
   }

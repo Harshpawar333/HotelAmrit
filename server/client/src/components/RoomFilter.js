@@ -1,6 +1,5 @@
 import React from "react";
 import Select from "react-select";
-import { Link } from "react-router-dom";
 import { TwoThumbInputRange } from "react-two-thumb-input-range";
 import { ROOM_TYPE, GUEST_OPTIONS } from "../constants";
 import "./room.scss";
