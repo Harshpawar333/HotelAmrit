@@ -27,7 +27,7 @@ app.use(express.static(path.join(__dirname, "client/build")));
 app.use("/api/hotel", hotelRoutes);
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "/client/build/index.html"));
+  res.sendFile(path.join(__dirname, "/client/build/public/index.html"));
 });
 
 app.listen(PORT, () => {
